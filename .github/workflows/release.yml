@@ -28,9 +28,8 @@ jobs:
       # Settings → Trusted publishing), and attaches a provenance statement to the package.
       - uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
-          version: pnpm version-packages
-          publish: pnpm release
-          title: Release
-          commit: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          version-script: pnpm version-packages
+          publish-script: pnpm release
+          pr-title: Release
+          commit-message: Release
+          github-token: ${{ secrets.GITHUB_TOKEN }}
