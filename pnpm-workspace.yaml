@@ -3,3 +3,5 @@ saveExact: true
 allowBuilds:
   protobufjs: false
 minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - mcp-authz

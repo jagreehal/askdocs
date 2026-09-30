@@ -27,8 +27,8 @@ importers:
         specifier: 6.2.12
         version: 6.2.12
       mcp-authz:
-        specifier: 0.2.0
-        version: 0.2.0(@modelcontextprotocol/client@2.2.0)(@modelcontextprotocol/node@2.1.0(@modelcontextprotocol/server@2.2.0)(hono@4.13.11))
+        specifier: 0.3.0
+        version: 0.3.0(@modelcontextprotocol/client@2.2.0)(@modelcontextprotocol/node@2.1.0(@modelcontextprotocol/server@2.2.0)(hono@4.13.11))
       zod:
         specifier: 4.6.5
         version: 4.6.5
@@ -1369,8 +1369,8 @@ packages:
   magic-string@1.4.2:
     resolution: {integrity: sha512-vG+rjFRj1PqdIBozIxAGMjPlOhaVe+GXpbttY/iSK7rGcJRMlwNJO7dcUwmUqkymsFLJiNGI06t4D7Fr7yRC9g==}
 
-  mcp-authz@0.2.0:
-    resolution: {integrity: sha512-v3SqsgQhzPLaJFUGWM/xQVYkFvZ3cx1/5SR2YDrk6g4HAcR/AyYLYl2FQOmi2nVy0bwwHaF2oJcUt0XNXZx/jA==}
+  mcp-authz@0.3.0:
+    resolution: {integrity: sha512-u/SuWZMNTbTjiCQmbICgSjQTCEsQvDAPEhDPJ+1uAkMBIvgFFlVuNaYC9419QLRspOkouTT5R6y0eDH3lUuqBQ==}
     engines: {node: '>=24'}
     hasBin: true
     peerDependencies:
@@ -2911,7 +2911,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  mcp-authz@0.2.0(@modelcontextprotocol/client@2.2.0)(@modelcontextprotocol/node@2.1.0(@modelcontextprotocol/server@2.2.0)(hono@4.13.11)):
+  mcp-authz@0.3.0(@modelcontextprotocol/client@2.2.0)(@modelcontextprotocol/node@2.1.0(@modelcontextprotocol/server@2.2.0)(hono@4.13.11)):
     dependencies:
       '@modelcontextprotocol/server': 2.2.0
       awaitly: 6.2.0

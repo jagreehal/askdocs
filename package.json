@@ -68,7 +68,7 @@
     "autotel": "7.9.0",
     "autotel-mcp-instrumentation": "59.0.1",
     "jose": "6.2.12",
-    "mcp-authz": "0.2.0",
+    "mcp-authz": "0.3.0",
     "zod": "4.6.5"
   },
   "peerDependencies": {
