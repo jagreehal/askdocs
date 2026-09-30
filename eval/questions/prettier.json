@@ -1,0 +1,334 @@
+[
+  {
+    "q": "prettier keeps changing my single quotes to double, how do I stop that?",
+    "answers": [{ "path": "options.md", "heading": "Quotes" }]
+  },
+  {
+    "q": "I set the max line length to 120 but prettier still produces some lines longer than that and also joins short lines. Isn't it a hard limit?",
+    "answers": [
+      { "path": "options.md", "heading": "Print Width" },
+      { "path": "rationale.md", "heading": "Print width" }
+    ]
+  },
+  {
+    "q": "We're migrating a huge legacy codebase gradually. Can prettier only touch files that have a special marker comment at the top?",
+    "answers": [{ "path": "options.md", "heading": "Require Pragma" }]
+  },
+  {
+    "q": "Windows teammates keep committing CRLF and every git diff is huge. How do I force LF everywhere?",
+    "answers": [{ "path": "options.md", "heading": "End of Line" }]
+  },
+  {
+    "q": "prettier is reformatting the HTML inside my html`` tagged template strings, how do I turn that off?",
+    "answers": [{ "path": "options.md", "heading": "Embedded Language Formatting" }]
+  },
+  {
+    "q": "my short object literal spread across several lines never gets collapsed back onto one line by prettier, why?",
+    "answers": [
+      { "path": "rationale.md", "heading": "Multi-line objects" },
+      { "path": "options.md", "heading": "Object Wrap" }
+    ]
+  },
+
+  {
+    "q": "what exit code does prettier --check return when some files are not formatted vs when prettier itself crashes?",
+    "answers": [{ "path": "cli.md", "heading": "Exit codes" }]
+  },
+  {
+    "q": "running prettier --write on the whole monorepo takes forever, can it skip files that didn't change since last run?",
+    "answers": [{ "path": "cli.md", "heading": "`--cache`" }]
+  },
+  {
+    "q": "prettier cache is useless in CI because git clone resets file timestamps, what should I use instead?",
+    "answers": [{ "path": "cli.md", "heading": "`--cache-strategy`" }]
+  },
+  {
+    "q": "how do I make the .prettierrc settings win over flags passed on the command line?",
+    "answers": [{ "path": "cli.md", "heading": "`--config-precedence`" }]
+  },
+  {
+    "q": "How do I pass a glob that matches a folder literally named [my-dir] with square brackets? It works on mac but not Windows",
+    "answers": [{ "path": "cli.md", "heading": "File patterns" }]
+  },
+  {
+    "q": "prettier \"**/*\" errors on png files and other stuff it can't parse, how to just skip them?",
+    "answers": [{ "path": "cli.md", "heading": "`--ignore-unknown`" }]
+  },
+
+  {
+    "q": "Can I put a .prettierrc in my home directory so it applies to every project on my machine?",
+    "answers": [{ "path": "configuration.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "I want semicolons only in *.test.js files and 4-space indent for a legacy folder. How?",
+    "answers": [{ "path": "configuration.md", "heading": "Configuration Overrides" }]
+  },
+  {
+    "q": "prettier doesn't recognize my file with a custom extension, how do I tell it to parse it as json?",
+    "answers": [{ "path": "configuration.md", "heading": "Setting the [parser](options.md#parser) option" }]
+  },
+  {
+    "q": "prettier.config.ts not loading, which Node version / flags do I need?",
+    "answers": [{ "path": "configuration.md", "heading": "TypeScript Configuration Files" }]
+  },
+  {
+    "q": "json schema for .prettierrc validation/autocomplete",
+    "answers": [{ "path": "configuration.md", "heading": "Configuration Schema" }]
+  },
+  {
+    "q": "Which .editorconfig properties does prettier actually pick up, and does .prettierrc override them?",
+    "answers": [
+      { "path": "configuration.md", "heading": "EditorConfig" },
+      { "path": "api.md", "heading": "`prettier.resolveConfig(fileUrlOrPath [, options])`" }
+    ]
+  },
+
+  {
+    "q": "Calling prettier from a node script to format a string of code, it complains it doesn't know which parser to use",
+    "answers": [{ "path": "api.md", "heading": "`prettier.format(source, options)`" }]
+  },
+  {
+    "q": "building an editor extension: how do I keep the caret in the same logical place after formatting?",
+    "answers": [{ "path": "api.md", "heading": "`prettier.formatWithCursor(source [, options])`" }]
+  },
+  {
+    "q": "The API is all promises and I need to format synchronously in a sync function. Any option?",
+    "answers": [{ "path": "api.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "From my extension, how can I find out whether a given file is excluded by .prettierignore and which parser it would use?",
+    "answers": [{ "path": "api.md", "heading": "`prettier.getFileInfo(fileUrlOrPath [, options])`" }]
+  },
+  {
+    "q": "We passed a function as the parser option to tweak the AST and it broke after upgrading to v3. What's the replacement?",
+    "answers": [{ "path": "api.md", "heading": "Custom Parser API (removed)" }]
+  },
+
+  {
+    "q": "how do I keep prettier from collapsing my hand-aligned matrix call in a JS file?",
+    "answers": [{ "path": "ignore.md", "heading": "JavaScript" }]
+  },
+  {
+    "q": "Our README has an auto-generated contributors table that prettier keeps mangling. How can I leave that block alone?",
+    "answers": [{ "path": "ignore.md", "heading": "Range Ignore" }]
+  },
+  {
+    "q": "// prettier-ignore inside JSX renders as text, what's the right comment syntax there?",
+    "answers": [{ "path": "ignore.md", "heading": "JSX" }]
+  },
+  {
+    "q": "In an Angular template I only want prettier to leave one specific event binding attribute untouched, not the whole element",
+    "answers": [{ "path": "ignore.md", "heading": "HTML" }]
+  },
+  {
+    "q": "exclude build and coverage directories from prettier",
+    "answers": [{ "path": "ignore.md", "heading": "Ignoring Files: .prettierignore" }]
+  },
+  {
+    "q": "Just for one command I want to format everything except vue and js files, without editing any ignore file",
+    "answers": [{ "path": "ignore.md", "heading": "Command Line File Patterns" }]
+  },
+
+  {
+    "q": "with semi: false why does prettier put a semicolon at the start of a line beginning with [ ?",
+    "answers": [{ "path": "rationale.md", "heading": "Semicolons" }]
+  },
+  {
+    "q": "After prettier split my ternary over two lines, my eslint-disable-next-line comment stopped applying. What should I do?",
+    "answers": [{ "path": "rationale.md", "heading": "Comments" }]
+  },
+  {
+    "q": "can prettier sort my imports alphabetically?",
+    "answers": [{ "path": "rationale.md", "heading": "What Prettier is _not_ concerned about" }]
+  },
+  {
+    "q": "Why does package.json get formatted differently from my other JSON files, like blank lines removed?",
+    "answers": [{ "path": "rationale.md", "heading": "Disclaimer about machine-generated files" }]
+  },
+
+  {
+    "q": "how to load a third-party plugin when running prettier from the command line",
+    "answers": [{ "path": "plugins.md", "heading": "Using Plugins" }]
+  },
+  {
+    "q": "Is there a prettier plugin to format Svelte components?",
+    "answers": [{ "path": "plugins.md", "heading": "Community Plugins" }]
+  },
+  {
+    "q": "I'm writing a plugin for a template language with <script> blocks; how do I have the JS inside formatted by the babel parser?",
+    "answers": [{ "path": "plugins.md", "heading": "(optional) `embed`" }]
+  },
+  {
+    "q": "My plugin's language should default to 4-space indentation instead of Prettier's 2. Where do I set that?",
+    "answers": [{ "path": "plugins.md", "heading": "`defaultOptions`" }]
+  },
+  {
+    "q": "debugging a plugin where comments end up attached to the wrong node, is there a flag that shows how each comment was classified?",
+    "answers": [{ "path": "plugins.md", "heading": "Manually attaching a comment" }]
+  },
+  {
+    "q": "How can I try out my plugin locally without publishing it to npm first?",
+    "answers": [{ "path": "plugins.md", "heading": "Testing Plugins" }]
+  },
+
+  {
+    "q": "I use git add -p a lot; which pre-commit setup formats only the staged hunks and won't touch my unstaged edits?",
+    "answers": [
+      {
+        "path": "precommit.md",
+        "heading": "Option 4. [git-format-staged](https://github.com/hallettj/git-format-staged)"
+      },
+      { "path": "precommit.md", "heading": "Option 1. [lint-staged](https://github.com/okonet/lint-staged)" }
+    ]
+  },
+  {
+    "q": "We're a .NET shop, how do we run prettier on commit alongside dotnet-format?",
+    "answers": [
+      { "path": "precommit.md", "heading": "Option 3. [Husky.Net](https://github.com/alirezanet/Husky.Net)" }
+    ]
+  },
+  {
+    "q": "After my custom git hook runs prettier, git status still shows the files as modified once the commit finishes",
+    "answers": [{ "path": "precommit.md", "heading": "Option 6. Shell script" }]
+  },
+  {
+    "q": "lefthook: how do I make sure the reformatted files get re-added to the commit?",
+    "answers": [{ "path": "precommit.md", "heading": "Option 5. [Lefthook](https://lefthook.dev/)" }]
+  },
+
+  {
+    "q": "Why shouldn't I just run npx prettier without adding it to devDependencies? Why pin an exact version?",
+    "answers": [
+      { "path": "install.md", "heading": "(intro)" },
+      { "path": "install.md", "heading": "Summary" }
+    ]
+  },
+  {
+    "q": "With lint-staged, should eslint run before or after prettier?",
+    "answers": [{ "path": "install.md", "heading": "Git hooks" }]
+  },
+  {
+    "q": "ESLint and prettier fight over formatting rules, how do I disable the conflicting ESLint rules?",
+    "answers": [
+      { "path": "install.md", "heading": "ESLint (and other linters)" },
+      { "path": "integrating-with-linters.md", "heading": "(intro)" },
+      { "path": "related-projects.md", "heading": "ESLint Integrations" }
+    ]
+  },
+
+  {
+    "q": "Can I run prettier client-side in a web page with no Node? Does it read .prettierrc there?",
+    "answers": [{ "path": "browser.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "standalone build: format() throws about missing parser even though I set parser: 'babel'",
+    "answers": [{ "path": "browser.md", "heading": "`prettier.format(code, options)`" }]
+  },
+  {
+    "q": "In the browser build, HTML inside a /* HTML */ template literal isn't formatted, JS is fine. What am I missing?",
+    "answers": [{ "path": "browser.md", "heading": "Parser plugins for embedded code" }]
+  },
+
+  {
+    "q": "Neoformat keeps using a global prettier from $PATH instead of the one in node_modules",
+    "answers": [{ "path": "vim.md", "heading": "[Neoformat](https://github.com/sbdchd/neoformat)" }]
+  },
+  {
+    "q": "vim ALE formats with prettier but then shows a ton of lint errors from tools I never configured",
+    "answers": [{ "path": "vim.md", "heading": "[ALE](https://github.com/dense-analysis/ale)" }]
+  },
+  {
+    "q": "I mapped a vim key to pipe the buffer through prettier and on a syntax error my whole buffer got replaced with an error message",
+    "answers": [{ "path": "vim.md", "heading": "Running manually" }]
+  },
+
+  {
+    "q": "quick way to toggle the formatter on and off from the VS Code status bar?",
+    "answers": [{ "path": "editors.md", "heading": "Visual Studio Code" }]
+  },
+  {
+    "q": "keyboard shortcut to reformat the current file with prettier in IntelliJ, and how to run it on save",
+    "answers": [
+      { "path": "webstorm.md", "heading": "JetBrains IDEs (WebStorm, IntelliJ IDEA, PyCharm, etc.)" }
+    ]
+  },
+  {
+    "q": "My editor has no prettier integration. Can I have files reformatted automatically whenever they change on disk?",
+    "answers": [{ "path": "watching-files.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "how do I have a GitHub workflow automatically push a commit with prettier fixes on pull requests?",
+    "answers": [{ "path": "ci.md", "heading": "GitHub Actions" }]
+  },
+  {
+    "q": "If I use prettier do I still need a linter like ESLint?",
+    "answers": [
+      { "path": "comparison.md", "heading": "How does it compare to ESLint/TSLint/stylelint, etc.?" }
+    ]
+  },
+  {
+    "q": "is it a good idea to run prettier through eslint-plugin-prettier so issues show up as lint errors?",
+    "answers": [{ "path": "integrating-with-linters.md", "heading": "Notes" }]
+  },
+  {
+    "q": "Can I open a feature request for an option to keep my own line breaks in function calls?",
+    "answers": [{ "path": "option-philosophy.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "how can I inspect the doc/IR that prettier builds before printing, in the playground?",
+    "answers": [{ "path": "technical-details.md", "heading": "(intro)" }]
+  },
+  {
+    "q": "We publish a company prettier config package; how do I use it in one repo but turn semicolons off there?",
+    "answers": [{ "path": "sharing-configurations.md", "heading": "Extending a Shareable Config" }]
+  },
+  {
+    "q": "our shared config uses a plugin, does the plugin go in dependencies or peerDependencies of the config package?",
+    "answers": [
+      { "path": "sharing-configurations.md", "heading": "Include Plugins in Shareable Configurations" }
+    ]
+  },
+  {
+    "q": "Is there a tool to run prettier across many CPU cores for a really large project?",
+    "answers": [{ "path": "related-projects.md", "heading": "Misc" }]
+  },
+  {
+    "q": "Where can my company get paid commercial support and security guarantees for prettier?",
+    "answers": [{ "path": "for-enterprise.md", "heading": "Available as part of the Tidelift Subscription" }]
+  },
+  {
+    "q": "what languages does prettier support out of the box?",
+    "answers": [{ "path": "index.md", "heading": "(intro)" }]
+  },
+
+  {
+    "q": "Can prettier print a unified diff of what it would change, like git diff, instead of writing the files?",
+    "answers": []
+  },
+  {
+    "q": "In VS Code, how do I point the Prettier extension at a specific prettier binary path?",
+    "answers": []
+  },
+  {
+    "q": "Can prettier --check output its results as JSON or JUnit XML for our CI dashboard?",
+    "answers": []
+  },
+  { "q": "How does prettier compare to Biome, and can I migrate my .prettierrc to it?", "answers": [] },
+  { "q": "Does prettier collect any telemetry or usage data?", "answers": [] },
+  { "q": "Is there an official Docker image for running prettier?", "answers": [] },
+  { "q": "how do I set up prettier format on save in the Zed editor?", "answers": [] },
+  { "q": "how to disable colored output in prettier CLI logs", "answers": [] },
+  { "q": "Can prettier format Jupyter notebooks (.ipynb)?", "answers": [] },
+  { "q": "Is dprint faster than prettier and are the outputs compatible?", "answers": [] },
+  { "q": "How do I run prettier as a Bazel rule/test?", "answers": [] },
+  {
+    "q": "After a big one-time prettier reformat commit, how do I hide that commit from git blame?",
+    "answers": []
+  },
+  {
+    "q": "prettier crashes with 'JavaScript heap out of memory' on our large repo, how do I fix it?",
+    "answers": []
+  },
+  { "q": "How do I configure Renovate or Dependabot to bump the pinned prettier version?", "answers": [] },
+  { "q": "Does prettier format the YAML front matter at the top of Markdown files?", "answers": [] }
+]

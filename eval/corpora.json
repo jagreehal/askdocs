@@ -1,0 +1,23 @@
+[
+  {
+    "id": "astro",
+    "repo": "https://github.com/withastro/docs",
+    "commit": "2ccd6e9b3c22e10b23c9c3ed99128bdafbf75c62",
+    "path": "src/content/docs/en",
+    "kind": "MDX (Starlight)"
+  },
+  {
+    "id": "docusaurus",
+    "repo": "https://github.com/facebook/docusaurus",
+    "commit": "baaa9069324a8dbff1ff8e3ffcd4598d5242332a",
+    "path": "website/docs",
+    "kind": "MDX (Docusaurus: admonitions, tabs)"
+  },
+  {
+    "id": "prettier",
+    "repo": "https://github.com/prettier/prettier",
+    "commit": "88d8e96365bf9885dfe795ac9a15cd69ad8356f0",
+    "path": "docs",
+    "kind": "plain docs/ folder"
+  }
+]

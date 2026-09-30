@@ -1,0 +1,360 @@
+[
+  {
+    "q": "Images coming from my headless CMS domain aren't being resized or converted to webp, but local images are. What do I need to configure so Astro optimizes them?",
+    "answers": [{ "path": "guides/images.mdx", "heading": "Authorizing remote images" }]
+  },
+  {
+    "q": "My host can't install sharp but I still want to use the <Image /> component without any processing. How do I turn off the image transformations?",
+    "answers": [
+      { "path": "guides/images.mdx", "heading": "Configure no-op passthrough service" },
+      { "path": "reference/errors/missing-sharp.mdx", "heading": "What went wrong?" }
+    ]
+  },
+  {
+    "q": "When the cached copy of a remote image expires, does Astro download it again on every build or can it check ETag / Last-Modified first?",
+    "answers": [{ "path": "guides/images.mdx", "heading": "Revalidation" }]
+  },
+  {
+    "q": "how do I check in code whether I'm running in dev or a production build",
+    "answers": [{ "path": "guides/environment-variables.mdx", "heading": "Default environment variables" }]
+  },
+  {
+    "q": "I need my staging build to hit a different API URL than production. How do I load a separate set of env vars for a staging build?",
+    "answers": [{ "path": "guides/environment-variables.mdx", "heading": "`.env` files" }]
+  },
+  {
+    "q": "Can I import variables from astro:env inside astro.config.mjs? It doesn't seem to work there.",
+    "answers": [{ "path": "guides/environment-variables.mdx", "heading": "Limitations" }]
+  },
+  {
+    "q": "I want to keep a utils.js and some test files next to my pages in src/pages without them becoming routes. How?",
+    "answers": [{ "path": "guides/routing.mdx", "heading": "Excluding pages" }]
+  },
+  {
+    "q": "I have both posts/create.astro and posts/[...slug].astro that could serve /posts/create. Which one does Astro pick?",
+    "answers": [{ "path": "guides/routing.mdx", "heading": "Route Priority Order" }]
+  },
+  {
+    "q": "How do I run an auth middleware and a logging middleware one after the other in a specific order?",
+    "answers": [
+      { "path": "guides/middleware.mdx", "heading": "Chaining middleware" },
+      { "path": "reference/modules/astro-middleware.mdx", "heading": "`sequence()`" }
+    ]
+  },
+  {
+    "q": "In middleware I look up the current user. How do I make that user object available to my .astro pages and API routes?",
+    "answers": [
+      { "path": "guides/middleware.mdx", "heading": "Storing data in `context.locals`" },
+      { "path": "reference/api-reference.mdx", "heading": "`locals`" }
+    ]
+  },
+  {
+    "q": "Does my middleware still run when a route isn't found and the 404 page is served, or before the 500 page?",
+    "answers": [{ "path": "guides/middleware.mdx", "heading": "Error pages" }]
+  },
+  {
+    "q": "After adding <ClientRouter />, my inline analytics script only runs on the first page load. How do I make it execute again on every navigation?",
+    "answers": [{ "path": "guides/view-transitions.mdx", "heading": "`data-astro-rerun`" }]
+  },
+  {
+    "q": "With the client router enabled, how can I make one specific link do a normal full page load instead?",
+    "answers": [{ "path": "guides/view-transitions.mdx", "heading": "Preventing client-side navigation" }]
+  },
+  {
+    "q": "How do I keep a video playing and a counter island's state from resetting when the user navigates to another page?",
+    "answers": [{ "path": "guides/view-transitions.mdx", "heading": "Maintaining State" }]
+  },
+  {
+    "q": "prefetch fails in firefox with NS_BINDING_ABORTED",
+    "answers": [{ "path": "guides/prefetch.mdx", "heading": "Firefox" }]
+  },
+  {
+    "q": "I pass class=\"highlight\" to my own Astro component but the class never shows up on the rendered element. Why?",
+    "answers": [{ "path": "guides/styling.mdx", "heading": "Passing a `class` to a child component" }]
+  },
+  {
+    "q": "Why do some of my stylesheets end up inlined as <style> tags in the built HTML while others are <link>ed?",
+    "answers": [
+      { "path": "guides/styling.mdx", "heading": "Bundle control" },
+      { "path": "reference/configuration-reference.mdx", "heading": "build.inlineStylesheets" }
+    ]
+  },
+  {
+    "q": "How can my client-side <script> read a value that I computed in the component frontmatter?",
+    "answers": [
+      { "path": "guides/client-side-scripts.mdx", "heading": "Pass frontmatter variables to scripts" },
+      { "path": "reference/directives-reference.mdx", "heading": "`define:vars`" }
+    ]
+  },
+  {
+    "q": "Can I hydrate a component slightly before it scrolls into the viewport, like 200px early?",
+    "answers": [
+      { "path": "reference/directives-reference.mdx", "heading": "`client:visible={{rootMargin}}`" }
+    ]
+  },
+  {
+    "q": "My client:only component shows nothing until the JS loads. How do I show a 'Loading...' placeholder in the meantime?",
+    "answers": [{ "path": "reference/directives-reference.mdx", "heading": "Display loading content" }]
+  },
+  {
+    "q": "How do I return a proper 'not found' or 'unauthorized' error from inside an action handler so the client can check the error code?",
+    "answers": [{ "path": "guides/actions.mdx", "heading": "Creating an `ActionError`" }]
+  },
+  {
+    "q": "When my form submission fails validation, all the fields the user typed are wiped. How do I keep them filled in?",
+    "answers": [{ "path": "guides/actions.mdx", "heading": "Preserve input values on error" }]
+  },
+  {
+    "q": "I don't use sessions at all. How do I stop my adapter from setting up its default session storage?",
+    "answers": [{ "path": "guides/sessions.mdx", "heading": "Disabling sessions" }]
+  },
+  {
+    "q": "Can I store a Date or a Map in Astro.session, and how do I get TypeScript types for what's stored?",
+    "answers": [{ "path": "guides/sessions.mdx", "heading": "Session data types" }]
+  },
+  {
+    "q": "In an API route, how do I handle every request method with one function instead of exporting GET, POST, PUT separately?",
+    "answers": [{ "path": "guides/endpoints.mdx", "heading": "HTTP methods" }]
+  },
+  {
+    "q": "Why can't I set a response header or cookie from inside my layout component on an SSR page?",
+    "answers": [{ "path": "guides/on-demand-rendering.mdx", "heading": "HTML streaming" }]
+  },
+  {
+    "q": "During rolling deploys on Kubernetes, props passed to my deferred server components fail to decrypt. How do I keep the same key across builds?",
+    "answers": [
+      { "path": "guides/server-islands.mdx", "heading": "Reusing the encryption key" },
+      { "path": "reference/cli-reference.mdx", "heading": "`astro create-key`" }
+    ]
+  },
+  {
+    "q": "Run a second astro dev server on another port while one is already running for the same project",
+    "answers": [{ "path": "reference/cli-reference.mdx", "heading": "`--ignore-lock`" }]
+  },
+  {
+    "q": "Some of my pages aren't translated into French yet. Instead of a 404, can I show the Spanish version for those URLs?",
+    "answers": [{ "path": "guides/internationalization.mdx", "heading": "Fallback" }]
+  },
+  {
+    "q": "How do I figure out which language the visitor's browser prefers so I can redirect them to the right locale?",
+    "answers": [
+      { "path": "guides/internationalization.mdx", "heading": "Browser language detection" },
+      { "path": "reference/api-reference.mdx", "heading": "`preferredLocale`" }
+    ]
+  },
+  {
+    "q": "My blog post URL is generated from the filename. Can I set a custom permalink for a single post in its frontmatter?",
+    "answers": [{ "path": "guides/content-collections.mdx", "heading": "Defining custom IDs" }]
+  },
+  {
+    "q": "I added rehype-slug to generate anchors. Will Astro overwrite my ids, and what does getHeadings() return?",
+    "answers": [{ "path": "guides/markdown-content.mdx", "heading": "Heading IDs and plugins" }]
+  },
+  {
+    "q": "The page text jumps when my custom web font finishes loading because the backup font looks very different. How do I fix that?",
+    "answers": [{ "path": "guides/fonts.mdx", "heading": "Customizing font fallbacks" }]
+  },
+  {
+    "q": "window is not defined error in react component",
+    "answers": [
+      { "path": "guides/troubleshooting.mdx", "heading": "`document` (or `window`) is not defined" }
+    ]
+  },
+  {
+    "q": "We're in an Nx workspace with dependencies installed at the root, and packages like @astrojs/vue aren't getting bundled properly. What config do I need?",
+    "answers": [
+      { "path": "guides/troubleshooting.mdx", "heading": "Adding dependencies to Astro in a monorepo" }
+    ]
+  },
+  {
+    "q": "How do I declare types for a custom property I attach to the window object so TypeScript stops complaining?",
+    "answers": [{ "path": "guides/typescript.mdx", "heading": "`window` and `globalThis`" }]
+  },
+  {
+    "q": "astro build succeeds even with TypeScript errors. How do I make the build fail on type errors?",
+    "answers": [
+      { "path": "guides/typescript.mdx", "heading": "Type checking" },
+      { "path": "reference/cli-reference.mdx", "heading": "`astro check`" }
+    ]
+  },
+  {
+    "q": "Can I use node:util or other Node.js modules in my component frontmatter?",
+    "answers": [{ "path": "guides/imports.mdx", "heading": "Node builtins" }]
+  },
+  {
+    "q": "How do I write a unit test that renders an .astro component and checks its HTML output with vitest?",
+    "answers": [{ "path": "guides/testing.mdx", "heading": "Vitest and Container API" }]
+  },
+  {
+    "q": "shiki different theme for dark mode code blocks",
+    "answers": [{ "path": "guides/syntax-highlighting.mdx", "heading": "Setting light and dark mode themes" }]
+  },
+  {
+    "q": "Can I import one of my .astro components into a React .jsx component?",
+    "answers": [
+      {
+        "path": "guides/framework-components.mdx",
+        "heading": "Can I use Astro components inside my framework components?"
+      }
+    ]
+  },
+  {
+    "q": "cache.set() doesn't seem to do anything when I run the dev server, is that a bug?",
+    "answers": [{ "path": "guides/caching.mdx", "heading": "Dev mode behavior" }]
+  },
+  {
+    "q": "I want to hide the dev toolbar only on my machine without changing the project config for the rest of the team.",
+    "answers": [{ "path": "guides/dev-toolbar.mdx", "heading": "Per-user" }]
+  },
+  {
+    "q": "I'm using htmx and need an endpoint that returns just an HTML fragment, no doctype or head. How do I do that with an .astro file?",
+    "answers": [{ "path": "basics/astro-pages.mdx", "heading": "Page Partials" }]
+  },
+  {
+    "q": "On my custom 500 page, how do I get access to the error that was thrown so I can show a message?",
+    "answers": [{ "path": "basics/astro-pages.mdx", "heading": "`error`" }]
+  },
+  {
+    "q": "Where should robots.txt and my web manifest go so they're copied to the build untouched?",
+    "answers": [{ "path": "basics/project-structure.mdx", "heading": "`public/`" }]
+  },
+  {
+    "q": "How do I serve my GitHub Pages site from my own domain instead of username.github.io?",
+    "answers": [
+      { "path": "guides/deploy/github.mdx", "heading": "Change your GitHub URL to a custom domain" }
+    ]
+  },
+  {
+    "q": "Site on Cloudflare logs 'Hydration completed but contains mismatches' in the console. What's causing it?",
+    "answers": [{ "path": "guides/deploy/cloudflare.mdx", "heading": "Client-side hydration" }]
+  },
+  {
+    "q": "Netlify build fails because it's using an old Node version. How do I tell Netlify which Node to use?",
+    "answers": [{ "path": "guides/deploy/netlify.mdx", "heading": "Set a Node.js version" }]
+  },
+  {
+    "q": "Ad blockers are blocking my built ads.js file. How can I change the names of the hashed files Astro outputs into _astro?",
+    "answers": [{ "path": "recipes/customizing-output-filenames.mdx", "heading": "Recipe" }]
+  },
+  {
+    "q": "How do I let feed readers find my RSS feed automatically when someone enters my homepage URL?",
+    "answers": [{ "path": "recipes/rss.mdx", "heading": "Enabling RSS feed auto-discovery" }]
+  },
+  {
+    "q": "My JS bundle got big. Is there a way to see which modules are taking up space?",
+    "answers": [{ "path": "recipes/analyze-bundle-size.mdx", "heading": "Recipe" }]
+  },
+  {
+    "q": "import a .yml data file in astro",
+    "answers": [{ "path": "recipes/add-yaml-support.mdx", "heading": "Recipe" }]
+  },
+  {
+    "q": "After upgrading, the space between my inline <span> and <em> elements disappeared and words run together. How do I get the spaces back?",
+    "answers": [
+      { "path": "reference/configuration-reference.mdx", "heading": "compressHTML" },
+      {
+        "path": "guides/upgrade-to/v7.mdx",
+        "heading": "New default whitespace handling: `compressHTML: 'jsx'`"
+      }
+    ]
+  },
+  {
+    "q": "I want the generated JS and CSS in _astro to load from cdn.example.com instead of my main domain. What setting does that?",
+    "answers": [{ "path": "reference/configuration-reference.mdx", "heading": "build.assetsPrefix" }]
+  },
+  {
+    "q": "My images look blurry and over-compressed after build. How do I control the output quality of the Image component?",
+    "answers": [{ "path": "reference/modules/astro-assets.mdx", "heading": "`quality`" }]
+  },
+  {
+    "q": "Lighthouse says my hero image should not be lazy loaded. How do I make it load eagerly with high fetch priority?",
+    "answers": [{ "path": "reference/modules/astro-assets.mdx", "heading": "`priority`" }]
+  },
+  {
+    "q": "How do I leave a specific page out of the sitemap generated by @astrojs/sitemap?",
+    "answers": [{ "path": "guides/integrations-guide/sitemap.mdx", "heading": "`filter()`" }]
+  },
+  {
+    "q": "In MDX, can I make every > quote render with my own styled Blockquote component instead of the plain HTML element?",
+    "answers": [
+      {
+        "path": "guides/integrations-guide/mdx.mdx",
+        "heading": "Assigning Custom Components to HTML elements"
+      }
+    ]
+  },
+  {
+    "q": "After moving Google Tag Manager into Partytown, dataLayer.push calls from my site don't reach it. How do I fix that?",
+    "answers": [{ "path": "guides/integrations-guide/partytown.mdx", "heading": "Forwarding variables" }]
+  },
+  {
+    "q": "Large video uploads to my endpoint throw an error on the Node adapter. How do I raise the maximum request size?",
+    "answers": [{ "path": "guides/integrations-guide/node.mdx", "heading": "`bodySizeLimit`" }]
+  },
+  {
+    "q": "On Vercel my server function can't find a JSON file I read at runtime, even though it's in the repo. How do I make sure it gets deployed with the function?",
+    "answers": [{ "path": "guides/integrations-guide/vercel.mdx", "heading": "`includeFiles`" }]
+  },
+  {
+    "q": "vercel serverless function times out, how to increase the time limit in astro",
+    "answers": [{ "path": "guides/integrations-guide/vercel.mdx", "heading": "`maxDuration`" }]
+  },
+  {
+    "q": "How do I get a post's featured image URL from the WordPress REST API in the same request as the post?",
+    "answers": [{ "path": "guides/cms/wordpress.mdx", "heading": "Returning embedded resources" }]
+  },
+  {
+    "q": "My coding agent needs to know when the dev server is ready to accept requests. Is there a URL it can poll?",
+    "answers": [{ "path": "guides/build-with-ai.mdx", "heading": "Health endpoint" }]
+  },
+  {
+    "q": "what replaces next/link <Link> when moving a Next.js app to Astro",
+    "answers": [{ "path": "guides/migrate-to-astro/from-nextjs.mdx", "heading": "Next Links to Astro" }]
+  },
+  {
+    "q": "I get NoMatchingStaticPathFound when visiting one of my dynamic routes. What causes that?",
+    "answers": [
+      { "path": "reference/errors/no-matching-static-path-found.mdx", "heading": "What went wrong?" }
+    ]
+  },
+
+  {
+    "q": "How do I open a WebSocket connection from an Astro API route to push real-time chat messages to clients?",
+    "answers": []
+  },
+  { "q": "How do I register a service worker so my Astro site keeps working offline?", "answers": [] },
+  {
+    "q": "Can astro build emit precompressed brotli (.br) versions of the HTML, CSS and JS files?",
+    "answers": []
+  },
+  { "q": "How do I set up Storybook to preview and document my .astro components?", "answers": [] },
+  { "q": "Can I package my Astro site as a desktop app with Tauri?", "answers": [] },
+  {
+    "q": "How do I run astro dev over https://localhost with a locally trusted certificate (mkcert) so I can test secure cookies?",
+    "answers": []
+  },
+  { "q": "Is there a way to render each blog post to a downloadable PDF at build time?", "answers": [] },
+  {
+    "q": "Our users are on old browsers. How do I set the JavaScript target so Astro's bundled scripts get transpiled down for them?",
+    "answers": []
+  },
+  {
+    "q": "Inside Docker on Windows the dev server doesn't notice when I edit files. How do I enable polling for the file watcher?",
+    "answers": []
+  },
+  { "q": "Can Astro generate AMP versions of my pages?", "answers": [] },
+  {
+    "q": "Does Astro send 103 Early Hints responses so the browser can start fetching fonts and CSS before the HTML arrives?",
+    "answers": []
+  },
+  { "q": "How do I send web push notifications to visitors of my Astro site?", "answers": [] },
+  { "q": "graphql subscriptions live updates in astro island", "answers": [] },
+  {
+    "q": "How can I cancel an action call that's still in flight from the client, e.g. with an AbortController, when the user navigates away?",
+    "answers": []
+  },
+  {
+    "q": "Is there a build flag that profiles astro build and reports which pages took the longest to render?",
+    "answers": []
+  }
+]

@@ -1,0 +1,137 @@
+{
+  "name": "askdocs",
+  "version": "0.0.0",
+  "description": "Search your docs from any coding agent: zero setup for one folder, a permission-aware MCP server for a team. SQLite FTS5 keyword search, with optional local semantic search.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jagreehal/askdocs.git"
+  },
+  "homepage": "https://github.com/jagreehal/askdocs#readme",
+  "bugs": {
+    "url": "https://github.com/jagreehal/askdocs/issues"
+  },
+  "type": "module",
+  "bin": {
+    "askdocs": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./cloudflare": {
+      "types": "./dist/cloudflare.d.ts",
+      "import": "./dist/cloudflare.js"
+    },
+    "./lambda": {
+      "types": "./dist/lambda.d.ts",
+      "import": "./dist/lambda.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "oxlint --deny-warnings",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "quality": "pnpm build && pnpm lint && pnpm test && pnpm format:check",
+    "eval": "pnpm build && node eval/run.mjs",
+    "bench:scale": "pnpm build && node eval/scale.mjs",
+    "changeset": "changeset",
+    "version-packages": "changeset version && pnpm install --lockfile-only",
+    "release": "pnpm quality && pnpm eval && COREPACK_ENABLE_STRICT=0 npm publish --provenance --access public && changeset tag"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "markdown",
+    "documentation",
+    "search",
+    "sqlite",
+    "fts5",
+    "context7"
+  ],
+  "author": "Jag Reehal <jag@jagreehal.com> (https://jagreehal.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/node": "2.1.0",
+    "@modelcontextprotocol/server": "2.2.0",
+    "@opentelemetry/api": "1.9.1",
+    "autotel": "7.9.0",
+    "autotel-mcp-instrumentation": "59.0.1",
+    "jose": "6.2.12",
+    "mcp-authz": "0.2.0",
+    "zod": "4.6.5"
+  },
+  "peerDependencies": {
+    "@ai-sdk/amazon-bedrock": "5.0.101",
+    "@ai-sdk/google": "4.0.85",
+    "@ai-sdk/openai": "4.0.81",
+    "@ai-sdk/openai-compatible": "3.0.59",
+    "@aws-sdk/client-s3": "3.1143.0",
+    "ai": "7.0.122",
+    "ai-sdk-ollama": "4.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@ai-sdk/amazon-bedrock": {
+      "optional": true
+    },
+    "@ai-sdk/google": {
+      "optional": true
+    },
+    "@ai-sdk/openai": {
+      "optional": true
+    },
+    "@ai-sdk/openai-compatible": {
+      "optional": true
+    },
+    "@aws-sdk/client-s3": {
+      "optional": true
+    },
+    "ai": {
+      "optional": true
+    },
+    "ai-sdk-ollama": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@ai-sdk/amazon-bedrock": "5.0.101",
+    "@ai-sdk/google": "4.0.85",
+    "@ai-sdk/openai": "4.0.81",
+    "@ai-sdk/openai-compatible": "3.0.59",
+    "@aws-sdk/client-s3": "3.1143.0",
+    "@changesets/cli": "3.0.3",
+    "@modelcontextprotocol/client": "2.2.0",
+    "@opentelemetry/context-async-hooks": "2.11.0",
+    "@opentelemetry/core": "2.11.0",
+    "@opentelemetry/sdk-trace-base": "2.11.0",
+    "@oxlint/plugins": "1.86.0",
+    "@types/node": "26.6.3",
+    "ai": "7.0.122",
+    "ai-sdk-ollama": "4.3.0",
+    "oauth2-mock-server": "9.2.0",
+    "oxlint": "1.86.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "prettier": "3.9.9",
+    "tsdown": "0.23.0",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "vitest": "5.0.2"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@11.23.0",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}

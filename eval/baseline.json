@@ -1,0 +1,44 @@
+{
+  "date": "2026-09-29",
+  "commit": "95c3414",
+  "results": {
+    "astro": {
+      "questions": 82,
+      "recall@1": 0.6119402985074627,
+      "recall@3": 0.835820895522388,
+      "MRR": 0.7241471215351812,
+      "no-answer correct": 0.7333333333333333,
+      "false no-answer": 0.208955223880597,
+      "docs": 422,
+      "sections": 4025
+    },
+    "docusaurus": {
+      "questions": 93,
+      "recall@1": 0.6363636363636364,
+      "recall@3": 0.8441558441558441,
+      "MRR": 0.7511337868480727,
+      "no-answer correct": 0.75,
+      "false no-answer": 0.22077922077922077,
+      "docs": 94,
+      "sections": 804
+    },
+    "prettier": {
+      "questions": 80,
+      "recall@1": 0.6,
+      "recall@3": 0.6923076923076923,
+      "MRR": 0.6688461538461539,
+      "no-answer correct": 0.8,
+      "false no-answer": 0.2923076923076923,
+      "docs": 24,
+      "sections": 184
+    },
+    "overall": {
+      "questions": 255,
+      "recall@1": 0.6172248803827751,
+      "recall@3": 0.7942583732057417,
+      "MRR": 0.7168907116275539,
+      "no-answer correct": 0.7608695652173914,
+      "false no-answer": 0.23923444976076555
+    }
+  }
+}
