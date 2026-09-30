@@ -17,6 +17,11 @@ import { traced } from './telemetry';
 export type Access = {
   policy: Policy;
   github?: GithubConfig;
+  /**
+   * Accept tokens that name no person: an agent signed in as itself with OAuth client
+   * credentials. Its identity is its `sub`, which a policy rule names.
+   */
+  agents?: boolean;
 };
 
 export type GithubConfig = {
@@ -59,6 +64,7 @@ const AccessFile = z.object({
     .object({ loginClaim: z.string().min(1), ttlSeconds: z.number().int().min(0).default(60) })
     .strict()
     .optional(),
+  agents: z.boolean().optional(),
 });
 
 export function loadAccess(file: string): Access {
@@ -70,7 +76,7 @@ export function parseAccess(json: string): Access {
   const parsed = AccessFile.strict().parse(JSON.parse(json));
 
   // Unknown fields and roles that do not exist fail the boot, rather than quietly granting nothing.
-  return { policy: definePolicy<PolicySpec>(parsed.policy), github: parsed.github };
+  return { policy: definePolicy<PolicySpec>(parsed.policy), github: parsed.github, agents: parsed.agents };
 }
 
 const GithubPermission = z.object({

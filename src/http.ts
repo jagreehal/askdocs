@@ -33,7 +33,7 @@ export function createHttpHandler(
     resourceServerUrl: args.resourceServerUrl,
     oauthMetadata: args.oauthMetadata,
     // Without jwksUri, mcp-authz falls back to the metadata's jwks_uri, exactly as if verifier were absent.
-    verifier: { jwksUri: args.jwksUri },
+    verifier: { jwksUri: args.jwksUri, requireEmail: access.agents !== true },
     // Every client shipping today (Claude Code included) still opens with the initialize
     // handshake that 2026-07-28 removed, so "legacy" here means "every real client".
     legacy: 'stateless',

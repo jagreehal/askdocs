@@ -172,8 +172,8 @@ The provider packages are loaded only when used, so bundlers leave them out: `no
 
 ## From Slack
 
-- **Claude Tag** connects to a remote MCP server with Claude's own service account, shared by the whole workspace, not with each person's login. Give that account a client-credentials token from your authorization server, and grant its `sub` only the libraries everyone in those channels may read. GitHub-backed permissions don't apply to it: it has no GitHub login, so those libraries are withheld.
-- **Your own Slack bot** on Lambda (for example a Chat SDK bot with the AI SDK) is the same: a client-credentials token, and the AI SDK's MCP client pointed at `MCP_PUBLIC_URL`. The bot then gets `search_docs` and `read_doc` as tools.
+- **Claude Tag** holds one credential for the whole workspace. Create a machine-to-machine client in your authorization server whose tokens are issued for `MCP_PUBLIC_URL`, and connect it in Claude Tag as an OAuth 2.0 client-credentials credential. In the access file, set `"agents": true` and grant the client's `sub` the libraries everyone in those channels may read. Claude Tag calls from `160.79.104.0/21`, if you allowlist.
+- **Your own Slack bot** works the same way: a client-credentials token, and the AI SDK's MCP client pointed at `MCP_PUBLIC_URL`. The bot then gets `search_docs` and `read_doc` as tools.
 
 ## Limits
 
