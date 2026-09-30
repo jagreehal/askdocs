@@ -1,0 +1,5 @@
+saveExact: true
+
+allowBuilds:
+  protobufjs: false
+minimumReleaseAge: 1440
